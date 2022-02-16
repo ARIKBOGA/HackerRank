@@ -1,11 +1,11 @@
 
 import java.util.*;
 
-class Student{
+class Ogrenci{
 	private int id;
 	private String fname;
 	private double cgpa;
-	public Student(int id, String fname, double cgpa) {
+	public Ogrenci(int id, String fname, double cgpa) {
 		super();
 		this.id = id;
 		this.fname = fname;
@@ -28,7 +28,7 @@ public class ArrayListSorting{
 		Scanner in = new Scanner(System.in);
 		int testCases = Integer.parseInt(in.nextLine());
 		
-		List<Student> studentList = new ArrayList<Student>();
+		List<Ogrenci> OgrenciList = new ArrayList<Ogrenci>();
 		while(testCases>0){
             System.out.print("ID gir : ");
 			int id = in.nextInt();
@@ -37,15 +37,15 @@ public class ArrayListSorting{
             System.out.print("Not gir : ");
 			double cgpa = in.nextDouble();
 			
-			Student st = new Student(id, fname, cgpa);
-			studentList.add(st);
+			Ogrenci st = new Ogrenci(id, fname, cgpa);
+			OgrenciList.add(st);
 			
 			testCases--;
 		}
         in.close(); // Öğrenilmesi gereken kod alttadır.
-        Collections.sort(studentList,  Comparator.comparing(Student :: getCgpa).reversed().thenComparing(Student :: getFname).thenComparing(Student :: getId));
+        Collections.sort(OgrenciList,  Comparator.comparing(Ogrenci :: getCgpa).reversed().thenComparing(Ogrenci :: getFname).thenComparing(Ogrenci :: getId));
       
-      	for(Student st: studentList){
+      	for(Ogrenci st: OgrenciList){
 			System.out.println(st.getFname());
 		}
 	}

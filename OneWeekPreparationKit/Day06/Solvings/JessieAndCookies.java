@@ -1,18 +1,33 @@
 package Day06.Solvings;
 
 import java.io.*;
-import java.util.*;
-import java.util.stream.*;
+import java.util.List;
+import java.util.PriorityQueue;
+import java.util.stream.Stream;
+
 import static java.util.stream.Collectors.toList;
 
-class result {
+class ResultClass {
+
+    /*
+     * Complete the 'cookies' function below.
+     *
+     * The function is expected to return an INTEGER.
+     * The function accepts following parameters:
+     *  1. INTEGER k
+     *  2. INTEGER_ARRAY A
+     */
+
     public static int cookies(int k, List<Integer> A) {
         // Write your code here
         PriorityQueue<Integer> cookies = new PriorityQueue<>();
+
         A.forEach(element -> {
             cookies.offer(element);
         });
+
         int operations = 0;
+
         while (cookies.size() > 1 && cookies.peek() < k) {
             int leastSweetCookie = cookies.poll();
             int nextLeastSweetCookie = cookies.poll();
@@ -20,17 +35,21 @@ class result {
             cookies.offer(combinedCookie);
             operations++;
         }
+
         if (cookies.peek() >= k) {
             return operations;
         }
+
         return -1;
+
     }
+
 }
 
 public class JessieAndCookies {
     public static void main(String[] args) throws IOException {
         BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(System.in));
-        BufferedWriter bufferedWriter = new BufferedWriter(new OutputStreamWriter(System.out));
+        BufferedWriter bufferedWriter = new BufferedWriter(new FileWriter(System.getenv("OUTPUT_PATH")));
 
         String[] firstMultipleInput = bufferedReader.readLine().replaceAll("\\s+$", "").split(" ");
 
@@ -42,7 +61,7 @@ public class JessieAndCookies {
                 .map(Integer::parseInt)
                 .collect(toList());
 
-        int result = Solvings.result.cookies(k, A);
+        int result = ResultClass.cookies(k, A);
 
         bufferedWriter.write(String.valueOf(result));
         bufferedWriter.newLine();
@@ -51,3 +70,4 @@ public class JessieAndCookies {
         bufferedWriter.close();
     }
 }
+
