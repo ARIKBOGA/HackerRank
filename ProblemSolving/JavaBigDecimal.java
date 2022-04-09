@@ -1,8 +1,7 @@
-
 import java.math.BigDecimal;
 import java.util.*;
 
-class SolutionJavaBigDecimal {
+class JavaBigDecimal {
     public static void main(String[] args) {
         // Input
         Scanner sc = new Scanner(System.in);

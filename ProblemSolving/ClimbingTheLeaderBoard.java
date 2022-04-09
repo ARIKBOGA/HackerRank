@@ -4,21 +4,6 @@ import java.util.Scanner;
 
 public class ClimbingTheLeaderBoard {
 
-    public static void main(String[] args) {
-        Scanner in = new Scanner(System.in);
-        int n = in.nextInt();
-        int[] scores = new int[n];
-        for (int scores_i = 0; scores_i < n; scores_i++) {
-            scores[scores_i] = in.nextInt();
-        }
-        int m = in.nextInt();
-        int[] alice = new int[m];
-        for (int alice_i = 0; alice_i < m; alice_i++) {
-            alice[alice_i] = in.nextInt();
-        }
-        printScores(scores, alice);
-    }
-
     public static void printScores(int[] scores, int[] alice) {
         ArrayList<Integer> places = new ArrayList<>();
         int place = 1;
@@ -48,5 +33,20 @@ public class ClimbingTheLeaderBoard {
             }
         }
         return 1;
+    }
+
+    public static void main(String[] args) {
+        Scanner in = new Scanner(System.in);
+        int n = in.nextInt();
+        int[] scores = new int[n];
+        for (int scores_i = 0; scores_i < n; scores_i++) {
+            scores[scores_i] = in.nextInt();
+        }
+        int m = in.nextInt();
+        int[] alice = new int[m];
+        for (int alice_i = 0; alice_i < m; alice_i++) {
+            alice[alice_i] = in.nextInt();
+        }
+        printScores(scores, alice);
     }
 }

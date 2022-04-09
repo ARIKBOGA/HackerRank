@@ -4,8 +4,8 @@ import java.util.*;
 
 public class QueueWithTwoStacks {
 
-    public static void main(String[] args) {
-        /* Enter your code here. Read input from STDIN. Print output to STDOUT. Your class should be named Solution. */
+    public static void main(String[] args) { // You can check the One Month P.K. folder week 3 package
+                                            //   for another solution without using STACK structure
         ArrayList<Integer> stack1 = new ArrayList<Integer>();
         ArrayList<Integer> stack2 = new ArrayList<>();
         Scanner sc = new Scanner(System.in);

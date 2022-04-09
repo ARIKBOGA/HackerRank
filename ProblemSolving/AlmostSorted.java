@@ -8,8 +8,7 @@ import java.util.stream.Stream;
 
 import static java.util.stream.Collectors.toList;
 
-class Bitiris {
-
+public class AlmostSorted {
     public static void almostSorted(List<Integer> arr) {
         // Write your code here
         boolean rev = false, swap = false;
@@ -36,20 +35,24 @@ class Bitiris {
                     }
                     if (i == s + 2) {
                         e = i;
-                        swap = true; break;
+                        swap = true;
+                        break;
                     }
                     if (i > s + 2) {
                         e = i;
-                        rev = true; break;
+                        rev = true;
+                        break;
                     } else {
                         if (i + 1 < n && arr.get(s) < arr.get(i + 1)) {
                             e = i;
-                            swap = true; break;
+                            swap = true;
+                            break;
                         }
                     }
                 } else {
                     e = i + 1;
-                    swap = true; break;
+                    swap = true;
+                    break;
                 }
             }
         }
@@ -94,11 +97,9 @@ class Bitiris {
         if (checkswap) {
             System.out.println("yes");
             System.out.println("swap " + (l + 1) + " " + (r + 1));
-            return;
         }
     }
-}
-public class AlmostSorted {
+
     public static void main(String[] args) throws IOException {
         BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(System.in));
 
@@ -108,7 +109,7 @@ public class AlmostSorted {
                 .map(Integer::parseInt)
                 .collect(toList());
 
-        Bitiris.almostSorted(arr);
+        almostSorted(arr);
 
         bufferedReader.close();
     }

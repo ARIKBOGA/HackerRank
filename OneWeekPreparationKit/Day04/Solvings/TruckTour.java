@@ -6,9 +6,9 @@ import java.util.stream.*;
 
 import static java.util.stream.Collectors.toList;
 
-class reno {
+
+public class TruckTour {
     public static int truckTour(List<List<Integer>> petrolpumps) {
-        // Write your code here
         int sum = 0;
         int baslangic = 0;
         for (int i = 0; i < petrolpumps.size(); i++) {
@@ -18,11 +18,9 @@ class reno {
                 baslangic = i + 1;
             }
         }
-        return (baslangic>=petrolpumps.size())?-1:baslangic;
+        return (baslangic >= petrolpumps.size()) ? -1 : baslangic;
     }
-}
 
-public class TruckTour {
     public static void main(String[] args) throws IOException {
         BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(System.in));
         BufferedWriter bufferedWriter = new BufferedWriter(new OutputStreamWriter(System.out));
@@ -39,7 +37,7 @@ public class TruckTour {
                 throw new RuntimeException(ex);
             }
         });
-        int result = reno.truckTour(petrolpumps);
+        int result = truckTour(petrolpumps);
         bufferedWriter.write(String.valueOf(result));
         bufferedWriter.newLine();
 

@@ -14,7 +14,7 @@ public class DivisibleSumPairs {
                 }
             }
         }
-        return counter ;
+        return counter;
     }
 
     public static void main(String[] args) {

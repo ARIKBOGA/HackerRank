@@ -1,11 +1,11 @@
 import java.io.*;
 import java.util.*;
 import java.util.stream.*;
+
 import static java.util.stream.Collectors.joining;
 import static java.util.stream.Collectors.toList;
 
-class Sonla {
-
+public class SparseArray {
     public static List<Integer> matchingStrings(List<String> strings, List<String> queries) {
         // Write your code here
         ArrayList<Integer> dizi = new ArrayList<>();
@@ -14,8 +14,7 @@ class Sonla {
         }
         return dizi;
     }
-}
-public class SparseArray {
+
     public static void main(String[] args) throws IOException {
         BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(System.in));
         BufferedWriter bufferedWriter = new BufferedWriter(new OutputStreamWriter(System.out));
@@ -42,7 +41,7 @@ public class SparseArray {
                 })
                 .collect(toList());
 
-        List<Integer> res = Sonla.matchingStrings(strings, queries);
+        List<Integer> res = matchingStrings(strings, queries);
 
         bufferedWriter.write(
                 res.stream()

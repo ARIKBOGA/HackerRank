@@ -10,14 +10,9 @@ import java.util.stream.IntStream;
 
 import static java.util.stream.Collectors.toList;
 
-class Result_t {
-    /*
-     * Complete the 'noPrefix' function below.
-     *
-     * The function accepts STRING_ARRAY words as parameter.
-     */
+
+public class NoPrefixSet {
     public static void noPrefix(List<String> words) {
-        // Write your code here
         TreeSet<String> treeSet = new TreeSet<>();
         for (String word : words) {
             String next = treeSet.ceiling(word);
@@ -32,9 +27,7 @@ class Result_t {
         }
         System.out.println("GOOD SET");
     }
-}
 
-public class NoPrefixSet {
     public static void main(String[] args) throws IOException {
         BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(System.in));
         int n = Integer.parseInt(bufferedReader.readLine().trim());
@@ -47,7 +40,7 @@ public class NoPrefixSet {
                 })
                 .collect(toList());
 
-        Result_t.noPrefix(words);
+        noPrefix(words);
         bufferedReader.close();
     }
 }

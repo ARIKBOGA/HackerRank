@@ -2,9 +2,10 @@ package Day07.Solvings;
 
 
 abstract class Uc implements Comparable<Uc> {
-    public  int frequency; // the frequency of this tree
-    public  char data;
+    public int frequency; // the frequency of this tree
+    public char data;
     public Uc left, right;
+
     public Uc(int freq) {
         frequency = freq;
     }
@@ -59,4 +60,3 @@ class TreeHoffmanDecoding {
 
     }
 }
-

@@ -8,15 +8,8 @@ import java.util.stream.Stream;
 
 import static java.util.stream.Collectors.toList;
 
-class Resu {
 
-    /*
-     * Complete the 'diagonalDifference' function below.
-     *
-     * The function is expected to return an INTEGER.
-     * The function accepts 2D_INTEGER_ARRAY arr as parameter.
-     */
-
+public class DiagonalDifferenceclass {
     public static int diagonalDifference(List<List<Integer>> arr) {
         // Write your code here
         int n = arr.size();
@@ -28,9 +21,6 @@ class Resu {
         return Math.abs(dia1 - dia2);
     }
 
-}
-
-public class DiagonalDifferenceclass {
     public static void main(String[] args) throws IOException {
         BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(System.in));
         BufferedWriter bufferedWriter = new BufferedWriter(new OutputStreamWriter(System.out));
@@ -51,7 +41,7 @@ public class DiagonalDifferenceclass {
             }
         });
 
-        int result = Resu.diagonalDifference(arr);
+        int result = diagonalDifference(arr);
 
         bufferedWriter.write(String.valueOf(result));
         bufferedWriter.newLine();

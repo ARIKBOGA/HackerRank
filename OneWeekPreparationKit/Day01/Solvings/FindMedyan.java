@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Scanner;
 
-public class FimdMedyan {
+public class FindMedyan {
 
     public static int getMedyan(ArrayList<Integer> list) {
         Collections.sort(list);

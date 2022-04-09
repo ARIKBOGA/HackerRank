@@ -1,18 +1,11 @@
-package Solvings;
+package Day01.Solvings;
 
 import java.io.*;
 
 import java.util.*;
 
 
-class Resul { // Result diğer dosyadaki(Solvings.PlusMinusDay01.java) sınıf ismi ile aynı olmaması için "Solvings.Resul" olarak değiştirildi.
-
-    /*
-     * Complete the 'miniMaxSum' function below.
-     *
-     * The function accepts INTEGER_ARRAY arr as parameter.
-     */
-
+public class MiniMaxSumDay01 {
     public static void miniMaxSum(List<Integer> arr) {
         // Write your code here
         int min = Integer.MAX_VALUE, max = Integer.MIN_VALUE;
@@ -29,10 +22,6 @@ class Resul { // Result diğer dosyadaki(Solvings.PlusMinusDay01.java) sınıf i
         System.out.println((total - max) + " " + (total - min));
 
     }
-
-}
-
-public class MiniMaxSumDay01 {
     public static void main(String[] args) throws IOException {
         BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(System.in));
 
@@ -45,7 +34,7 @@ public class MiniMaxSumDay01 {
             arr.add(arrItem);
         }
 
-        Resul.miniMaxSum(arr);
+        miniMaxSum(arr);
 
         bufferedReader.close();
     }

@@ -3,9 +3,9 @@ import java.util.Scanner;
 public class RootOfNumber {
     public static double root(double d, int i) {
         double s = 0,
-            end = d,
-            mid,result,
-            error = 0.001;
+                end = d,
+                mid, result,
+                error = 0.001;
         do {
             mid = (s + end) / 2.0;
             result = Math.pow(mid, i);
@@ -19,6 +19,7 @@ public class RootOfNumber {
         } while (Math.abs(result - d) >= error);
         return mid;
     }
+
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         System.out.print("Enter the times of controls : ");
@@ -28,7 +29,7 @@ public class RootOfNumber {
             double d = sc.nextDouble();
             int r = sc.nextInt();
             double x = root(d, r);
-            System.out.println(x+"   "+Math.pow(x,r));
+            System.out.println(x + "   " + Math.pow(x, r));
         }
     }
 }

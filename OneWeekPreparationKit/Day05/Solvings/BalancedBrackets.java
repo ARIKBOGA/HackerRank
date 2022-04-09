@@ -4,8 +4,7 @@ import java.io.*;
 import java.util.Stack;
 import java.util.stream.IntStream;
 
-class Result {
-
+public class BalancedBrackets {
     public static String isBalanced(String s) {
         // Write your code here
         Stack<Character> stack = new Stack<>();
@@ -27,9 +26,7 @@ class Result {
         }
         return stack.isEmpty() ? "YES" : "NO";
     }
-}
 
-public class BalancedBrackets {
     public static void main(String[] args) throws IOException {
         BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(System.in));
         BufferedWriter bufferedWriter = new BufferedWriter(new OutputStreamWriter(System.out));
@@ -40,7 +37,7 @@ public class BalancedBrackets {
             try {
                 String s = bufferedReader.readLine();
 
-                String result = Result.isBalanced(s);
+                String result = isBalanced(s);
 
                 bufferedWriter.write(result);
                 bufferedWriter.newLine();

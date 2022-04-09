@@ -1,7 +1,7 @@
 import java.text.NumberFormat;
 import java.util.*;
 
-public class SolutionCurrency {
+public class Currency {
 
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
@@ -27,6 +27,6 @@ public class SolutionCurrency {
         System.out.println("China: " + china.format(payment));
         System.out.println("France: " + france.format(payment));
         System.out.println("Türkiye : " + turkiye.format(payment));
-        System.out.println("german = " + german.format(payment));
+        System.out.println("German : " + german.format(payment));
     }
 }

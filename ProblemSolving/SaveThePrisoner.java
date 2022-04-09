@@ -1,26 +1,12 @@
 import java.io.*;
 import java.util.stream.*;
 
-class Sonuc {
-
-    /*
-     * Complete the 'saveThePrisoner' function below.
-     *
-     * The function is expected to return an INTEGER.
-     * The function accepts following parameters:
-     *  1. INTEGER n
-     *  2. INTEGER m
-     *  3. INTEGER s
-     */
+public class SaveThePrisoner {
 
     public static int saveThePrisoner(int n, int m, int s) {
-    // Write your code here
-    return ((m - 1) + (s - 1)) % n + 1;
+        return ((m - 1) + (s - 1)) % n + 1;
     }
 
-}
-
-public class SaveThePrisoner {
     public static void main(String[] args) throws IOException {
         BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(System.in));
         BufferedWriter bufferedWriter = new BufferedWriter(new FileWriter(System.getenv("OUTPUT_PATH")));
@@ -37,7 +23,7 @@ public class SaveThePrisoner {
 
                 int s = Integer.parseInt(firstMultipleInput[2]);
 
-                int result = Sonuc.saveThePrisoner(n, m, s);
+                int result = saveThePrisoner(n, m, s);
 
                 bufferedWriter.write(String.valueOf(result));
                 bufferedWriter.newLine();
@@ -45,7 +31,6 @@ public class SaveThePrisoner {
                 throw new RuntimeException(ex);
             }
         });
-
         bufferedReader.close();
         bufferedWriter.close();
     }

@@ -6,7 +6,8 @@ import java.util.stream.*;
 
 import static java.util.stream.Collectors.toList;
 
-class Getir {
+
+public class GridChallenge {
     public static String gridChallenge(List<String> grid) {
         // Write your code here
         for (int i = 0; i < grid.size(); ++i) {
@@ -21,13 +22,9 @@ class Getir {
                 }
             }
         }
-
         return "YES";
     }
 
-}
-
-public class GridChallenge {
     public static void main(String[] args) throws IOException {
         BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(System.in));
         BufferedWriter bufferedWriter = new BufferedWriter(new OutputStreamWriter(System.out));
@@ -47,7 +44,7 @@ public class GridChallenge {
                         })
                         .collect(toList());
 
-                String result = Getir.gridChallenge(grid);
+                String result = gridChallenge(grid);
 
                 bufferedWriter.write(result);
                 bufferedWriter.newLine();

@@ -34,7 +34,6 @@ public class Java1DArrayPart2 {
             for (int i = 0; i < n; i++) {
                 game[i] = scan.nextInt();
             }
-
             System.out.println((canWin(leap, game)) ? "YES" : "NO");
         }
         scan.close();

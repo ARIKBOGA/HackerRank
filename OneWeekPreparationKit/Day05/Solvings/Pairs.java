@@ -3,11 +3,12 @@ package Day05.Solvings;
 import java.io.*;
 import java.util.*;
 import java.util.stream.*;
+
 import static java.util.stream.Collectors.toList;
 
-class Sonuclar {
+
+public class Pairs {
     public static int pairs(int k, List<Integer> arr) {
-        // Write your code here
         int counter = 0;
         Set<Integer> value = new HashSet<>(arr);
         for (int i : value) {
@@ -17,8 +18,7 @@ class Sonuclar {
         }
         return counter;
     }
-}
-public class Pairs {
+
     public static void main(String[] args) throws IOException {
         BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(System.in));
         BufferedWriter bufferedWriter = new BufferedWriter(new OutputStreamWriter(System.out));
@@ -33,7 +33,7 @@ public class Pairs {
                 .map(Integer::parseInt)
                 .collect(toList());
 
-        int result = Sonuclar.pairs(k, arr);
+        int result = pairs(k, arr);
 
         bufferedWriter.write(String.valueOf(result));
         bufferedWriter.newLine();

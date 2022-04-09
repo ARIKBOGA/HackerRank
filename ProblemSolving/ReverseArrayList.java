@@ -4,7 +4,8 @@ import java.util.stream.*;
 
 import static java.util.stream.Collectors.*;
 
-class Tersle {
+
+public class ReverseArrayList {
     public static List<Integer> reverseArray(List<Integer> a) {
         // Write your code here
         List<Integer> reverse = new ArrayList<>();
@@ -13,9 +14,6 @@ class Tersle {
         }
         return reverse;
     }
-}
-
-public class ReverseArrayList {
     public static void main(String[] args) throws IOException {
         BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(System.in));
         BufferedWriter bufferedWriter = new BufferedWriter(new OutputStreamWriter(System.out));
@@ -26,7 +24,7 @@ public class ReverseArrayList {
                 .map(Integer::parseInt)
                 .collect(toList());
 
-        List<Integer> res = Tersle.reverseArray(arr);
+        List<Integer> res = reverseArray(arr);
 
         bufferedWriter.write(
                 res.stream()
@@ -34,7 +32,6 @@ public class ReverseArrayList {
                         .collect(joining(" "))
                         + "\n"
         );
-
         bufferedReader.close();
         bufferedWriter.close();
     }

@@ -34,4 +34,3 @@ public class TypeCounter {
     }//end of main
 
 }//end of class
-

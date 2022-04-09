@@ -2,9 +2,9 @@
 import java.io.*;
 import java.util.stream.*;
 
-class Anson {
+
+public class BiggerIsGreater {
     public static String biggerIsGreater(String str) {
-        // Write your code here
         char[] chars = str.toCharArray();
         int i = chars.length - 1;
         while (i > 0) {
@@ -31,9 +31,7 @@ class Anson {
         }
         return "no answer";
     }
-}
 
-public class BiggerIsGreater {
     public static void main(String[] args) throws IOException {
         BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(System.in));
         BufferedWriter bufferedWriter = new BufferedWriter(new OutputStreamWriter(System.out));
@@ -44,7 +42,7 @@ public class BiggerIsGreater {
             try {
                 String w = bufferedReader.readLine();
 
-                String result = Anson.biggerIsGreater(w);
+                String result = biggerIsGreater(w);
 
                 bufferedWriter.write(result);
                 bufferedWriter.newLine();

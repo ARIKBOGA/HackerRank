@@ -6,19 +6,10 @@ import java.text.DecimalFormat;
 //import java.security.*;
 //import java.text.*;
 import java.util.*;
-//mport java.util.concurrent.*;
-//import java.util.regex.*;
 
-class Son {
 
-    /*
-     * Complete the 'plusMinus' function below.
-     *
-     * The function accepts INTEGER_ARRAY arr as parameter.
-     */
-
+public class PlusMinusDay01 {
     public static void plusMinus(List<Integer> arr) {
-        // Write your code here
         double countpos = 0, countneg = 0, countzero = 0;
         for (Integer integer : arr) {
             if (integer > 0) {
@@ -32,13 +23,10 @@ class Son {
         DecimalFormat df = new DecimalFormat("##.######");
         System.out.println(df.format(countpos / arr.size()));
         System.out.println(df.format(countneg / arr.size()));
-        System.out.println(df.format(countzero / arr.size())); 
-        
+        System.out.println(df.format(countzero / arr.size()));
+
     }
 
-}
-
-public class PlusMinusDay01 {
     public static void main(String[] args) throws IOException {
         BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(System.in));
 
@@ -53,7 +41,7 @@ public class PlusMinusDay01 {
             arr.add(arrItem);
         }
 
-        Son.plusMinus(arr);
+        plusMinus(arr);
 
         bufferedReader.close();
     }

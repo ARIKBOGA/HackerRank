@@ -52,7 +52,6 @@ public class PrimeChecker {
                     break;
                 }
                 set.add(method.getName());
-
             }
             if (overload) {
                 throw new Exception("Overloading not allowed");
@@ -61,6 +60,4 @@ public class PrimeChecker {
             System.out.println(e);
         }
     }
-
 }
-

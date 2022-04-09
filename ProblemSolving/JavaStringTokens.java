@@ -1,8 +1,6 @@
-//import java.io.*;
-
 import java.util.Scanner;
 
-public class SolutionJavaStringTokens {
+public class JavaStringTokens {
 
     public static void main(String[] args) {
         Scanner scan = new Scanner(System.in);
