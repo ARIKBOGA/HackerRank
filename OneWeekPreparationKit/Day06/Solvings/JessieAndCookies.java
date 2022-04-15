@@ -3,6 +3,7 @@ package Day06.Solvings;
 import java.io.*;
 import java.util.List;
 import java.util.PriorityQueue;
+import java.util.Scanner;
 import java.util.stream.Stream;
 
 import static java.util.stream.Collectors.toList;
@@ -12,9 +13,7 @@ public class JessieAndCookies {
     public static int cookies(int k, List<Integer> A) {
         PriorityQueue<Integer> cookies = new PriorityQueue<>();
 
-        A.forEach(element -> {
-            cookies.offer(element);
-        });
+        A.forEach(cookies::offer);
 
         int operations = 0;
 
@@ -31,26 +30,18 @@ public class JessieAndCookies {
         return -1;
     }
     public static void main(String[] args) throws IOException {
-        BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(System.in));
-        BufferedWriter bufferedWriter = new BufferedWriter(new FileWriter(System.getenv("OUTPUT_PATH")));
 
-        String[] firstMultipleInput = bufferedReader.readLine().replaceAll("\\s+$", "").split(" ");
+        Scanner scan = new Scanner(System.in);
 
-        int n = Integer.parseInt(firstMultipleInput[0]);
+        int k = scan.nextInt();
 
-        int k = Integer.parseInt(firstMultipleInput[1]);
-
-        List<Integer> A = Stream.of(bufferedReader.readLine().replaceAll("\\s+$", "").split(" "))
+        List<Integer> A = Stream.of(scan.nextLine().replaceAll("\\s+$", "").split(" "))
                 .map(Integer::parseInt)
                 .collect(toList());
 
         int result = cookies(k, A);
 
-        bufferedWriter.write(String.valueOf(result));
-        bufferedWriter.newLine();
 
-        bufferedReader.close();
-        bufferedWriter.close();
     }
 }
 
