@@ -1,26 +1,25 @@
 package week4;
 
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
+import java.util.Random;
+
 
 public class TheMaxSubArray {
     public static List<Integer> maxSubarray(List<Integer> arr) {
-
         List<Integer> ans = new ArrayList<>();
 
         int curSum = 0, posSum = 0, maxSum = Integer.MIN_VALUE;
         int maxVal = Integer.MIN_VALUE;
         boolean allNeg = true;
 
-        for (Integer i : arr) {
-            if (i > 0)
+        for (Integer integer : arr) {
+            if (integer > 0)
                 allNeg = false;
-            curSum = Math.max(i, curSum + i);
+            curSum = Math.max(integer, curSum + integer);
             maxSum = Math.max(maxSum, curSum);
-
-            posSum = Math.max(posSum, posSum + i);
-            maxVal = Math.max(maxVal, i);
+            posSum = Math.max(posSum, posSum + integer);
+            maxVal = Math.max(maxVal, integer);
         }
         if (allNeg)
             posSum = maxVal;
@@ -31,8 +30,11 @@ public class TheMaxSubArray {
     }
 
     public static void main(String[] args) {
-        List<Integer> list = new ArrayList<>(Arrays.asList(2, -1, 2, 3, 4, -5));
-
+        List<Integer> list = new ArrayList<>();
+        Random random = new Random();
+        for (int i = 0; i < 100; i++) {
+            list.add(random.nextInt(10) * (random.nextBoolean() ? 1 : -1));
+        }
         System.out.println(maxSubarray(list));
     }
 }
