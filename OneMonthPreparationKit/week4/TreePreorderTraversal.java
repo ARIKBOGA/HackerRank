@@ -15,6 +15,7 @@ class Node {
 }
 
 public class TreePreorderTraversal {
+    
     public static void preOrder(Node root) {
         if (root == null) return;
         System.out.println(root.data);
