@@ -10,6 +10,7 @@ public class Pangram {
         return i == 26 ? "pangram" : "not pangram";
     }
 
+
     public static String isPangram_2(String s) {
         return s.trim().toLowerCase().replace(" ", "").chars().distinct().count() == 26 ? "pangram" : "not pangram";
     }
