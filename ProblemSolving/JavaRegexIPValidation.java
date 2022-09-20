@@ -8,14 +8,15 @@ class SolutionJavaRegexIPValidation{
         Scanner in = new Scanner(System.in);
         while(in.hasNext()){
             String IP = in.next();
-            System.out.println(IP.matches(MyRegex.pattern));
+            System.out.println(IP.matches(IP_Validator.pattern));
         }
         in.close();
 
     }
+
 }
 
-//IP adress validator regex code
-class MyRegex {
-    public static String pattern = "((\\d|\\d\\d|[0-1]\\d\\d|2[0-4][0-9]|25[0-5])\\.){3}(\\d|\\d\\d|[0-1]\\d\\d|2[0-4][0-9]|25[0-5])";
+//IP address validator regex code
+interface IP_Validator {
+    String pattern = "((\\d|\\d\\d|[0-1]\\d\\d|2[0-4][0-9]|25[0-5])\\.){3}(\\d|\\d\\d|[0-1]\\d\\d|2[0-4][0-9]|25[0-5])";
 }
