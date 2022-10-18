@@ -1,4 +1,6 @@
-import java.util.*;
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
 
 public class LonelyInteger {
     public static int lonelyinteger(List<Integer> a) {

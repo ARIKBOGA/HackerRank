@@ -1,5 +1,5 @@
 import java.math.BigDecimal;
-import java.util.*;
+import java.util.Scanner;
 
 class JavaBigDecimal {
     public static void main(String[] args) {

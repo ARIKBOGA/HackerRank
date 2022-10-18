@@ -1,11 +1,12 @@
 package Day05.Solvings;
 
-import java.util.*;
+import java.util.ArrayList;
+import java.util.Scanner;
 
 public class QueueWithTwoStacks {
 
     public static void main(String[] args) { // You can check the One Month P.K. folder week 3 package
-                                            //   for another solution without using STACK structure
+        //   for another solution without using STACK structure
         ArrayList<Integer> stack1 = new ArrayList<Integer>();
         ArrayList<Integer> stack2 = new ArrayList<>();
         Scanner sc = new Scanner(System.in);

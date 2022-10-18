@@ -1,5 +1,5 @@
 import java.io.*;
-import java.util.stream.*;
+import java.util.stream.IntStream;
 
 public class SaveThePrisoner {
 

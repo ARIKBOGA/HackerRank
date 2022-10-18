@@ -10,13 +10,38 @@ import java.util.stream.Stream;
 
 
 class Result {
-    static class Node {
-        private static Node[][] nodes;
+    public static int minimumMoves(List<String> grid, int startRow, int startCol, int goalRow, int goalCol) {
+        // Initialize
+        Node[][] nodes = new Node[grid.size()][grid.size()];
+        for (int r = 0; r < nodes.length; r++) {
+            for (int c = 0; c < nodes.length; c++) {
+                if (grid.get(r).charAt(c) != 'X') nodes[r][c] = new Node(r, c, r == goalRow && c == goalCol);
+            }
+        }
+        Node.setEnvironment(nodes);
 
-        public static void setEnvironment(Node[][] nodes) {
-            Node.nodes = nodes;
+        // Connect
+        for (Node[] node : nodes) {
+            for (int c = 0; c < nodes.length; c++) {
+                if (node[c] != null) node[c].connect();
+            }
         }
 
+        // Traverse
+        Node startNode = nodes[startRow][startCol];
+        startNode.visited = true;
+        Node[] toVisit = new Node[]{startNode};
+        int distance = 0;
+        while (toVisit.length > 0) {
+            if (Arrays.stream(toVisit).anyMatch(t -> t.isGoal)) break;
+            distance++;
+            toVisit = Arrays.stream(toVisit).flatMap(Node::getConnectedNotVisited).toArray(Node[]::new);
+        }
+        return distance;
+    }
+
+    static class Node {
+        private static Node[][] nodes;
         List<Node> connectedTo = new ArrayList<>();
         boolean isGoal;
         boolean visited;
@@ -28,6 +53,10 @@ class Result {
             this.col = col;
             this.isGoal = isGoal;
             this.visited = false;
+        }
+
+        public static void setEnvironment(Node[][] nodes) {
+            Node.nodes = nodes;
         }
 
         public void connect() {
@@ -82,36 +111,6 @@ class Result {
                     .map(t -> t.row + "-" + t.col)
                     .collect(Collectors.toList()) + '}';
         }
-    }
-
-    public static int minimumMoves(List<String> grid, int startRow, int startCol, int goalRow, int goalCol) {
-        // Initialize
-        Node[][] nodes = new Node[grid.size()][grid.size()];
-        for (int r = 0; r < nodes.length; r++) {
-            for (int c = 0; c < nodes.length; c++) {
-                if (grid.get(r).charAt(c) != 'X') nodes[r][c] = new Node(r, c, r == goalRow && c == goalCol);
-            }
-        }
-        Node.setEnvironment(nodes);
-
-        // Connect
-        for (Node[] node : nodes) {
-            for (int c = 0; c < nodes.length; c++) {
-                if (node[c] != null) node[c].connect();
-            }
-        }
-
-        // Traverse
-        Node startNode = nodes[startRow][startCol];
-        startNode.visited = true;
-        Node[] toVisit = new Node[]{startNode};
-        int distance = 0;
-        while (toVisit.length > 0) {
-            if (Arrays.stream(toVisit).anyMatch(t -> t.isGoal)) break;
-            distance++;
-            toVisit = Arrays.stream(toVisit).flatMap(Node::getConnectedNotVisited).toArray(Node[]::new);
-        }
-        return distance;
     }
 }
 

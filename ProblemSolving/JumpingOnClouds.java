@@ -1,4 +1,3 @@
-
 public class JumpingOnClouds {
     public static int jumpingOnClouds(int[] arr) {
         int jump = -1;

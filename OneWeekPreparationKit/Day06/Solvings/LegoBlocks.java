@@ -1,6 +1,7 @@
 package Day06.Solvings;
 
-import java.util.*;
+import java.util.Arrays;
+import java.util.Scanner;
 
 public class LegoBlocks {
     int md = 1000000007;
@@ -10,6 +11,19 @@ public class LegoBlocks {
     public LegoBlocks() {
         for (int[] w : ways) Arrays.fill(w, -1);
         for (int[] w : waysRestrict) Arrays.fill(w, -1);
+    }
+
+    public static void main(String[] args) {
+        LegoBlocks o = new LegoBlocks();
+        Scanner sc = new Scanner(System.in);
+        int n = sc.nextInt();
+        for (int i = 0; i < n; i++) {
+            int a, b;
+            a = sc.nextInt();
+            b = sc.nextInt();
+            System.out.println(o.solveRestrict(a, b));
+        }
+        sc.close();
     }
 
     public int solve(int n, int m) {
@@ -50,18 +64,5 @@ public class LegoBlocks {
         }
         waysRestrict[n][m] = (int) ans;
         return waysRestrict[n][m];
-    }
-
-    public static void main(String[] args) {
-        LegoBlocks o = new LegoBlocks();
-        Scanner sc = new Scanner(System.in);
-        int n = sc.nextInt();
-        for (int i = 0; i < n; i++) {
-            int a, b;
-            a = sc.nextInt();
-            b = sc.nextInt();
-            System.out.println(o.solveRestrict(a, b));
-        }
-        sc.close();
     }
 }

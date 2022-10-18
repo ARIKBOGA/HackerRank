@@ -1,8 +1,10 @@
 package Day01.Solvings;
 
-import java.io.*;
-
-import java.util.*;
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.util.ArrayList;
+import java.util.List;
 
 
 public class MiniMaxSumDay01 {
@@ -22,6 +24,7 @@ public class MiniMaxSumDay01 {
         System.out.println((total - max) + " " + (total - min));
 
     }
+
     public static void main(String[] args) throws IOException {
         BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(System.in));
 

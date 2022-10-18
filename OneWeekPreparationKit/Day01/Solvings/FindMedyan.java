@@ -10,9 +10,9 @@ public class FindMedyan {
         Collections.sort(list);
         int medyan;
         if (list.size() % 2 == 0) {
-            medyan = (list.get(list.size() / 2) + list.get( (list.size() / 2) - 1) );
-        }else{
-            medyan=(list.get(list.size()/2));
+            medyan = (list.get(list.size() / 2) + list.get((list.size() / 2) - 1));
+        } else {
+            medyan = (list.get(list.size() / 2));
         }
         return medyan;
     }
@@ -28,7 +28,7 @@ public class FindMedyan {
             arr.add(sc.nextInt());
         }
         sc.close();
-        System.out.println("Girilen listenin Medyanı : "+getMedyan(arr));    
+        System.out.println("Girilen listenin Medyanı : " + getMedyan(arr));
 
     }
 }

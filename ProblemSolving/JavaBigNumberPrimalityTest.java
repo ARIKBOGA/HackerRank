@@ -1,5 +1,5 @@
-import java.io.*;
-import java.util.*;
+import java.io.IOException;
+import java.util.Scanner;
 
 
 public class JavaBigNumberPrimalityTest {

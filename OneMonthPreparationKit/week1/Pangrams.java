@@ -16,10 +16,17 @@ public class Pangrams {
         return i == 26;
     }
 
+    public static boolean pangrams_2(String s) {
+        return 26 == s.replaceAll(" ", "")
+                .chars()
+                .distinct()
+                .count();
+    }
+
     public static String isPangram(List<String> list) {
         String result = "";
         for (String each : list) {
-            result += pangrams(each) ? "1" : "0";
+            result += pangrams_2(each) ? "1" : "0";
         }
         return result;
     }

@@ -37,10 +37,6 @@ public class QueriesWithFixedLength {
         private Integer value;
         private Integer index;
 
-        public int compareTo(Item item) {
-            return this.value.compareTo(item.value) * -1;
-        }
-
         public Item(Integer value, Integer index) {
             this.value = value;
             this.index = index;
@@ -48,6 +44,10 @@ public class QueriesWithFixedLength {
 
         public static Item of(Integer value, Integer index) {
             return new Item(value, index);
+        }
+
+        public int compareTo(Item item) {
+            return this.value.compareTo(item.value) * -1;
         }
 
         public int getValue() {

@@ -1,7 +1,5 @@
 package week4;
 
-import java.net.MalformedURLException;
-import java.net.URL;
 import java.util.Scanner;
 
 public class BinarySearchTreeLowestCommonAncestor {
@@ -22,14 +20,14 @@ public class BinarySearchTreeLowestCommonAncestor {
         Scanner scan = new Scanner(System.in);
         int t = scan.nextInt();
         Node root = null;
-        while(t-- > 0) {
+        while (t-- > 0) {
             int data = scan.nextInt();
             root = TreePreorderTraversal.insert(root, data);
         }
         int v1 = scan.nextInt();
         int v2 = scan.nextInt();
         scan.close();
-        Node ans = lca(root,v1,v2);
+        Node ans = lca(root, v1, v2);
         System.out.println(ans.data);
     }
 }

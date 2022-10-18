@@ -1,39 +1,12 @@
 package Day05.Solvings;
 
-import java.io.*;
-import java.util.*;
+import java.io.BufferedWriter;
+import java.io.IOException;
+import java.io.OutputStreamWriter;
+import java.util.Scanner;
 
-public class MergeTwoSortedLinkedList{
-    static class SinglyLinkedListNode {
-        public int data;
-        public SinglyLinkedListNode next;
-
-        public SinglyLinkedListNode(int nodeData) {
-            this.data = nodeData;
-            this.next = null;
-        }
-    }
-    static class SinglyLinkedList {
-        public SinglyLinkedListNode head;
-        public SinglyLinkedListNode tail;
-
-        public SinglyLinkedList() {
-            this.head = null;
-            this.tail = null;
-        }
-
-        public void insertNode(int nodeData) {
-            SinglyLinkedListNode node = new SinglyLinkedListNode(nodeData);
-
-            if (this.head == null) {
-                this.head = node;
-            } else {
-                this.tail.next = node;
-            }
-
-            this.tail = node;
-        }
-    }
+public class MergeTwoSortedLinkedList {
+    private static final Scanner scanner = new Scanner(System.in);
 
     public static void printSinglyLinkedList(SinglyLinkedListNode node, String sep, BufferedWriter bufferedWriter) throws IOException {
         while (node != null) {
@@ -47,31 +20,27 @@ public class MergeTwoSortedLinkedList{
         }
     }
 
-
-    public static SinglyLinkedListNode mergeLists(SinglyLinkedListNode head1,SinglyLinkedListNode head2) {
+    public static SinglyLinkedListNode mergeLists(SinglyLinkedListNode head1, SinglyLinkedListNode head2) {
         SinglyLinkedListNode head = new SinglyLinkedListNode(0);
         SinglyLinkedListNode ans = head;
-        while(head1!=null && head2!= null){
-            if(head1.data <= head2.data){
+        while (head1 != null && head2 != null) {
+            if (head1.data <= head2.data) {
                 ans.next = head1;
                 head1 = head1.next;
-            }
-            else{
+            } else {
                 ans.next = head2;
                 head2 = head2.next;
             }
             ans = ans.next;
         }
-        if(head1!=null){
+        if (head1 != null) {
             ans.next = head1;
         }
-        if(head2!=null){
+        if (head2 != null) {
             ans.next = head2;
         }
         return head.next;
     }
-
-    private static final Scanner scanner = new Scanner(System.in);
 
     public static void main(String[] args) throws IOException {
         BufferedWriter bufferedWriter = new BufferedWriter(new OutputStreamWriter(System.out));
@@ -113,5 +82,37 @@ public class MergeTwoSortedLinkedList{
         bufferedWriter.close();
 
         scanner.close();
+    }
+
+    static class SinglyLinkedListNode {
+        public int data;
+        public SinglyLinkedListNode next;
+
+        public SinglyLinkedListNode(int nodeData) {
+            this.data = nodeData;
+            this.next = null;
+        }
+    }
+
+    static class SinglyLinkedList {
+        public SinglyLinkedListNode head;
+        public SinglyLinkedListNode tail;
+
+        public SinglyLinkedList() {
+            this.head = null;
+            this.tail = null;
+        }
+
+        public void insertNode(int nodeData) {
+            SinglyLinkedListNode node = new SinglyLinkedListNode(nodeData);
+
+            if (this.head == null) {
+                this.head = node;
+            } else {
+                this.tail.next = node;
+            }
+
+            this.tail = node;
+        }
     }
 }

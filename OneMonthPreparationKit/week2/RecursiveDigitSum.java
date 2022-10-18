@@ -8,7 +8,7 @@ public class RecursiveDigitSum {
         }
         sum *= k;
         if (sum < 10) return (int) sum;
-        return superDigit(String.valueOf(sum),1);
+        return superDigit(String.valueOf(sum), 1);
     }
 
     public static void main(String[] args) {

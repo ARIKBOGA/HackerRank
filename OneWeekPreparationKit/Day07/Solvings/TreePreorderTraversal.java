@@ -1,6 +1,6 @@
 package Day07.Solvings;
 
-import java.util.*;
+import java.util.Scanner;
 
 class Node {
     Node left;

@@ -1,6 +1,6 @@
 package Day06.Solvings;
 
-import java.io.*;
+import java.io.IOException;
 import java.util.List;
 import java.util.PriorityQueue;
 import java.util.Scanner;
@@ -29,6 +29,7 @@ public class JessieAndCookies {
         }
         return -1;
     }
+
     public static void main(String[] args) throws IOException {
 
         Scanner scan = new Scanner(System.in);

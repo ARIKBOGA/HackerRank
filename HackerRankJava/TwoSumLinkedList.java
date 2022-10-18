@@ -1,4 +1,3 @@
-
 class ListNode {
     int val;
     ListNode next;
@@ -13,21 +12,22 @@ class ListNode {
 
 class TwoSumLinkedList {
     public int lengthOfLongestSubstring(String s) {
-        String sub="";
-        String temp="";
-        for(int i = 0; i < s.length(); i++){
-            if(!temp.contains(String.valueOf(s.charAt(i)))){
+        String sub = "";
+        String temp = "";
+        for (int i = 0; i < s.length(); i++) {
+            if (!temp.contains(String.valueOf(s.charAt(i)))) {
                 temp += s.charAt(i);
-            }else{
-                if(temp.length() > sub.length()){
+            } else {
+                if (temp.length() > sub.length()) {
                     sub = temp;
-                    s=s.substring(i+1);
+                    s = s.substring(i + 1);
                 }
-                temp="";
+                temp = "";
             }
         }
         return sub.length();
     }
+
     public ListNode addTwoNumbers(ListNode l1, ListNode l2) {
         ListNode head = new ListNode();
         ListNode l3 = head;

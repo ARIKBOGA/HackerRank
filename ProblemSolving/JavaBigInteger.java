@@ -1,5 +1,5 @@
 import java.math.BigInteger;
-import java.util.*;
+import java.util.Scanner;
 
 public class JavaBigInteger {
 

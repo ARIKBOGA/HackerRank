@@ -1,6 +1,7 @@
 package Day06.Solvings;
 
-import java.util.*;
+import java.util.Scanner;
+import java.util.Stack;
 
 public class BreadthFirstSearchShortestReach {
     static int[] bfs(int n, int m, int[][] edges, int s) {

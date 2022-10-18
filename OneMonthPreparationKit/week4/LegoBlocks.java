@@ -39,10 +39,11 @@ public class LegoBlocks {
             // with the total permutations count (both valid and invalid) of the remaining columns
             // because the previous valid permutations are aligned at the end of their respective column
             // and thus every wall beginning with them is invalid.
-            invalid.add((int) ((IntStream.range(1, j).mapToLong(t -> {  long var = (totals.get(t) - invalid.get(t) + MOD) % MOD;
-                                                                        return var * totals.get(j - t) % MOD;
-                                                                    })
-                                                    .sum() % MOD)));
+            invalid.add((int) ((IntStream.range(1, j).mapToLong(t -> {
+                        long var = (totals.get(t) - invalid.get(t) + MOD) % MOD;
+                        return var * totals.get(j - t) % MOD;
+                    })
+                    .sum() % MOD)));
         }
 
         int result = totals.get(w) - invalid.get(w);

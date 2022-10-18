@@ -1,6 +1,6 @@
 package week2.mockTests;
 
-import java.util.*;
+import java.util.Scanner;
 
 public class Anagram {
 

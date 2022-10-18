@@ -40,7 +40,7 @@ public class Waiter {
             x += 2;
         }
         recurs(number, 0);
-        for (int i = 1; i < q ; i++) {
+        for (int i = 1; i < q; i++) {
             List<Integer> cv = new ArrayList<>(reminder);
             recurs(cv, i);
         }

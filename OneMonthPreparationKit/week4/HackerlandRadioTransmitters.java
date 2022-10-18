@@ -59,7 +59,7 @@ public class HackerlandRadioTransmitters {
         System.out.println(hackerlandRadioTransmitters(list2, 1));
 
         System.out.println("-------------------------------");
-        System.out.println(hackerlandRadioTransmittersMine(list,2));
-        System.out.println(hackerlandRadioTransmittersMine(list2,1));
+        System.out.println(hackerlandRadioTransmittersMine(list, 2));
+        System.out.println(hackerlandRadioTransmittersMine(list2, 1));
     }
 }

@@ -1,7 +1,5 @@
 package week2;
 
-import java.util.SortedMap;
-
 public class SumvsXor {
     public static long sumXor(long n) {
         if (n == 0) return 1;
