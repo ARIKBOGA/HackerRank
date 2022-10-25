@@ -18,7 +18,15 @@ public class CamelCase {
         return result;
     }
 
+    public static int camelcase(String s) {
+        return (int) s.chars()
+                .filter(Character::isUpperCase)
+                .count() + 1;
+    }
+
     public static void main(String[] args) {
         System.out.println("camelCase(\"cats AND*Dogs-are Awesome\") = " + camelCase("cats AND*Dogs-are Awesome"));
+
+        System.out.println("camelcase(\"saveChangesInTheEditor\") = " + camelcase("saveChangesInTheEditor"));
     }
 }
